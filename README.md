@@ -23,17 +23,20 @@ Otherwise these three packages on top of the CW1-PT environment of COMP0197 will
 ## 3 Downloading Datasets
 We pre-train our model using iNat we recommend downloading this dataset. Use the following command from torch to first download the dataset. Set root to whichever folder you wish but we recommend `root = ”./datasets/i- Nat kingdom/2021 train mini”`. We can call the following command
 
-```
+```python
 iNatdata = datasets.INaturalist(root=root, version=’2021_train_mini’,
     target_type = ’kingdom’)
 ```
 
 We then transform the above dataset as follows:
-```python image_resizer_imagent.py --in_dir root --out_dir out --size 64```
+```python
+python image_resizer_imagent.py --in_dir root --out_dir out --size 64
+```
 Where `root = ”./datasets/iNat kingdom/2021 train mini”` and `out = ”./dataset- s/iNat64”`.
 
 Please change the following lines in SimCLR Scratch Dev.py starting at line 109:
-```
+
+```python
 inat_dataset_train = MixedINat128(
 ’/cs/student/projects3/COMP0087/grp1/simclr_pytorch_new/datasets/iNat64/lanczos’,
            transform=transform_augmented,
@@ -42,7 +45,7 @@ inat_dataset_train = MixedINat128(
 
 to the following:
 
-```
+```python
 inat_dataset_train = MixedINat128(
 ’./datasets/iNat64’,
            transform=transform_augmented,
