@@ -1,14 +1,8 @@
 # Instructions
 
 The following are instructions to run our code. Note our tutorial is focused on linux machines that run pip virtual environments.
-## 1 Activating the environments
-Start by activating an environment type the following into the terminal:
 
-```virtualenv -p python3 venvE```
-
-If you use a conda enviornment you can ignore this step; however it is highly recommended to make your own environment. I recommend venvE as we have called it in most our files to run the code.
-
-## 2 Installing required packages
+## 1 Installing required packages
 
 To install required packages run the following command:
 
@@ -20,7 +14,7 @@ Otherwise these three packages on top of the CW1-PT environment of COMP0197 will
 2. scikit-learn 
 3. pyav
 
-## 3 Downloading Datasets
+## 2 Downloading Datasets
 We pre-train our model using iNat we recommend downloading this dataset. Use the following command from torch to first download the dataset. Set root to whichever folder you wish but we recommend `root = ”./datasets/i- Nat kingdom/2021 train mini”`. We can call the following command
 
 ```python
@@ -52,11 +46,11 @@ inat_dataset_train = MixedINat128(
        )
 ```
 
-## 4 Saving and Loading models
+## 3 Saving and Loading models
 Throughout our code we have saved our models in custom paths in the UCL shared CS folders however we recommend changing them so that the models get saved and loaded into your folders.
 We recommend modifying the `save path` variable throughout the code to your desired directories.
 Similarly when loading the model we call the variable checkpoint path please change this to the `save path` you saved the model in.
 
 
-## 5 Running all our code
+## 4 Running all our code
 After modifying the variables in which our data and models are saved and stored everything can be run with `runner.py`. Type `python runner.py`
